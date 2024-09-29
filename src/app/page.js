@@ -64,7 +64,6 @@ export default function Home() {
   }
 
   const handleExportData = () => {
-    console.log("entre");
     try {
       const dataFormat = data.map((item, index) => {
         return {
