@@ -50,4 +50,5 @@ Optional requirement: add Export to CSV button (generate the number of pages whi
 Of course, errors should be "applied" before formatting/rendering/exporting.
 
 ## Preview Images:
+![image](https://github.com/user-attachments/assets/90c9fabd-76d4-4bfb-aaa2-00fa08e44304)
 
