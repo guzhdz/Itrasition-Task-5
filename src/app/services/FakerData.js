@@ -88,7 +88,7 @@ class FakerData {
 
     generateError(data) {
         const attribute = this.getErrorAttribute();
-        const index = this.rng.int32();
+        const index = Math.floor(this.rng() * 3);
         switch (index) {
             case 0:
                 data[attribute] = this.deleteChar(data[attribute]);
@@ -121,7 +121,6 @@ class FakerData {
         arrayString.splice(index, 0, newChar);
         return arrayString.join('');
     }
-
 
     swapNearCharacter(string) {
         if (string.length === 0)

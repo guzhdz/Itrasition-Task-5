@@ -29,7 +29,7 @@ const OptionsInputs = ({ getData, setData, setLoading, setPage, loading }) => {
     }
 
     const handleChangeErrors = (e) => {
-        setErrors(e.target.value);
+        setErrors(e.target.value);  
     }
 
     const handleChangeSlider = (e) => {
@@ -95,13 +95,19 @@ const OptionsInputs = ({ getData, setData, setLoading, setPage, loading }) => {
     }
 
     useEffect(() => {
-        if (validateInputs()) {
-            setData([]);
-            setPage(1);
-            setLoading(true);
-            const options = getOptions('initial');
-            getData('initial', options);
-        }
+        const handler = setTimeout(() => {
+            if (validateInputs()) {
+                setData([]);
+                setPage(1);
+                setLoading(true);
+                const options = getOptions('initial');
+                getData('initial', options);
+            }
+          }, 500);
+
+          return () => {
+            clearTimeout(handler);
+          };
     }, [region, errors, seed]);
 
     return (
@@ -182,7 +188,7 @@ const OptionsInputs = ({ getData, setData, setLoading, setPage, loading }) => {
                         value={seed}
                         onChange={handleChangeSeed}
                         helperText={messageErrors[1]}
-                        disabled={loading} />
+                        disabled={loading}/>
                 </FormControl>
 
                 <div>
