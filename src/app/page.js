@@ -71,7 +71,7 @@ export default function Home() {
           'Index': index + 1,
           'ID': item.id, 
           'Name': item.name,
-          'Email': item.email,
+          'Adress': item.address,
           'Phone': item.phone
         }
       })
