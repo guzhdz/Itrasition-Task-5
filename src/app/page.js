@@ -18,6 +18,10 @@ import {
   Box
 } from "@mui/material";
 
+//Library imports
+import { parse } from 'json2csv';
+import { saveAs } from 'file-saver';
+
 
 export default function Home() {
   const theme = createTheme({
@@ -59,6 +63,27 @@ export default function Home() {
     }, 2000);
   }
 
+  const handleExportData = () => {
+    console.log("entre");
+    try {
+      const dataFormat = data.map((item, index) => {
+        return {
+          'Index': index + 1,
+          'ID': item.id, 
+          'Name': item.name,
+          'Email': item.email,
+          'Phone': item.phone
+        }
+      })
+      const csv = parse(dataFormat);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      saveAs(blob, 'exported_data.csv');
+    } catch (err) {
+      console.error('Error exporting to CSV:', err);
+      alert('Error exporting to CSV, please try again later.');
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl">
@@ -77,7 +102,8 @@ export default function Home() {
           setData={setData}
           setLoading={setLoading}
           loading={loading}
-          setPage={setPage} />
+          setPage={setPage}
+          handleExportData={handleExportData} />
           <Table
             data={data}
             loading={loading}

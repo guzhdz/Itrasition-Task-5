@@ -11,14 +11,15 @@ import {
     MenuItem,
     Slider,
     TextField,
-    IconButton
+    IconButton,
+    Button
 } from "@mui/material";
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 
 //Library imports
 import seedrandom from "seedrandom";
 
-const OptionsInputs = ({ getData, setData, setLoading, setPage, loading }) => {
+const OptionsInputs = ({ getData, setData, setLoading, setPage, loading, handleExportData }) => {
     const [region, setRegion] = useState(0);
     const [errors, setErrors] = useState(0);
     const [seed, setSeed] = useState(471961336);
@@ -197,6 +198,15 @@ const OptionsInputs = ({ getData, setData, setLoading, setPage, loading }) => {
                     </IconButton>
                 </div>
             </Box>
+
+            <Button
+                variant="contained"
+                color="secondary"
+                onClick={handleExportData}
+                disabled={loading}
+                sx={{ color: "white" }}>
+                Export
+            </Button>
         </Box>
     )
 }
