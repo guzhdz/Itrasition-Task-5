@@ -1,5 +1,5 @@
 # Fake data Generator
-Deploy Link: 
+Deploy Link: https://itrasition-task-5.onrender.com/
 
 This is a project from Itrasition intership program. If you wanna try it in local take this steps:
 - Download the project
