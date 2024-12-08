@@ -7,6 +7,8 @@ This is a project from Itrasition intership program. If you wanna try it in loca
 - Run npm run dev
 - Test the project
 
+Technologies: Next.js, React.js (Javascript, CSS, HTML), Node.js, Material UI.
+
 ## Task instructions
 For every group: use your language.
 
