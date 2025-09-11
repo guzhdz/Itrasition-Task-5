@@ -13,8 +13,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Task 5",
-  description: "Itrasition Task 5",
+  title: "Data Faker",
+  description: "It generate fake random data based on a seed"
 };
 
 export default function RootLayout({ children }) {
